@@ -1,0 +1,62 @@
+/*! @file Power.h
+	@brief A class for Power functions
+	@author Chiara Nobile e Valentina De Marchi
+
+	Details.
+*/ 
+
+#ifndef POWER_H
+#define POWER_H
+
+#include <iostream>
+#include <cmath>
+#include <cstring>
+#include "CFunction.h"
+
+class Power {
+
+private:
+	double k_coeff;
+	double e_coeff;
+
+public:
+
+	/// @name CONSTRUCTORS/DESTRUCTOR
+	/// @{
+	Power();
+	Power(const Power &p);
+	~Power();
+	/// @}
+	
+	/// @name BASIC HANDLING
+	/// @{
+	void Init();
+	void Reset();											
+	/// @}
+	
+	/// @name GETTERS / SETTERS
+	/// @{
+	double GetCoeffK();
+	double GetCoeffE();
+	
+    double GetValue(double in) const;
+	
+	double SetCoeffK(double k);
+	double SetCoeffE(double e);
+	/// @}
+	
+	/// @name OPERATORS
+	/// @{
+	Power& operator=(const Power &p);
+	bool operator==(const Power &p);
+	/// @}
+	
+	/// @name DEBUG and SERIALIZATION
+	/// @{
+	void ErrorMessage(const char *string); 
+	void WarningMessage(const char *string);
+	void Dump();
+	/// @}
+};
+
+#endif
