@@ -1,9 +1,9 @@
-/*! @file esponenziale.h
+/*! @file Exponential.h
 	@brief A class for Exponential functions
 	@author Chiara Nobile e Valentina De Marchi
 
 	Details.
-*/ 
+*/
 
 #ifndef EXPONENTIAL_H
 #define EXPONENTIAL_H
@@ -13,7 +13,9 @@
 #include <cstring>
 #include "CFunction.h"
 
-class Exponential {
+using namespace std;
+
+class Exponential : public Function {
 
 private:
 	double b_coeff;
@@ -28,33 +30,32 @@ public:
 	Exponential(const Exponential &p);
 	~Exponential();
 	/// @}
-	
+
 	/// @name BASIC HANDLING
 	/// @{
 	void Init();
-	void Reset();											
+	void Reset();
 	/// @}
-	
+
 	/// @name GETTERS / SETTERS
 	/// @{
-	double GetAll();
 	double GetBase();
 	double GetCoeffK();
 	double GetCoeffC();
-	
-    double GetValue(double in) const;
-	
-	double SetBase(double b);
-	double SetCoeffK(double k);
-	double SetCoeffC(double c);
+
+	double GetValue(double in);
+
+	void SetBase(double b);
+	void SetCoeffK(double k);
+	void SetCoeffC(double c);
 	/// @}
-	
+
 	/// @name OPERATORS
 	/// @{
 	Exponential& operator=(const Exponential &p);
 	bool operator==(const Exponential &p);
 	/// @}
-	
+
 	/// @name DEBUG and SERIALIZATION
 	/// @{
 	void ErrorMessage(const char *string); 

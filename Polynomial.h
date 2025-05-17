@@ -1,9 +1,9 @@
-/*! @file polinomio.h
-	@brief A class for polynomial functions
+/*! @file Polynomial.h
+	@brief A class for Polynomial functions
 	@author Chiara Nobile e Valentina De Marchi
 
 	Details.
-*/ 
+*/
 
 #ifndef POLYNOMIAL_H
 #define POLYNOMIAL_H
@@ -15,10 +15,10 @@
 
 using namespace std;
 
-class Polynomial {
+class Polynomial : public Function {
 private:
-    double* coeff;
-    int degree;
+	double* coeff;
+	int degree;
 
 public:
 
@@ -27,30 +27,30 @@ public:
 	Polynomial();
 	Polynomial(const double* coefficients, int size);
 	Polynomial(const Polynomial &p);
-	virtual ~Polynomial();
+	~Polynomial();
 	/// @}
-	
-	
+
+
 	/// @name OPERATORS
 	/// @{
-    Polynomial& operator=(const Polynomial &p);
-    Polynomial operator+(const Polynomial &p);
-    bool operator==(const Polynomial &p);
+	Polynomial& operator=(const Polynomial &p);
+	Polynomial operator+(const Polynomial &p);
+	bool operator==(const Polynomial &p);
 	/// @}
-	
+
 	void SetPolynomial(const double* coefficients, int size);
-	
+
 	/// @name GETTERS
 	/// @{
-    double GetValue(double in) const;
-   	/// @}
-	
+	double GetValue(double in);
+	/// @}
+
 	void Reset();
-	
-	
-	/// @name DEBUG and SERIALIZATION 
+
+
+	/// @name DEBUG and SERIALIZATION
 	/// @{
-	void ErrorMessage(const char *string); 
+	void ErrorMessage(const char *string);
 	void WarningMessage(const char *string);
 	void Dump();
 	/// @}

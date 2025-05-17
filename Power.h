@@ -3,7 +3,7 @@
 	@author Chiara Nobile e Valentina De Marchi
 
 	Details.
-*/ 
+*/
 
 #ifndef POWER_H
 #define POWER_H
@@ -13,7 +13,9 @@
 #include <cstring>
 #include "CFunction.h"
 
-class Power {
+using namespace std;
+
+class Power : public Function {
 
 private:
 	double k_coeff;
@@ -27,30 +29,30 @@ public:
 	Power(const Power &p);
 	~Power();
 	/// @}
-	
+
 	/// @name BASIC HANDLING
 	/// @{
 	void Init();
-	void Reset();											
+	void Reset();
 	/// @}
-	
+
 	/// @name GETTERS / SETTERS
 	/// @{
 	double GetCoeffK();
 	double GetCoeffE();
-	
-    double GetValue(double in) const;
-	
-	double SetCoeffK(double k);
-	double SetCoeffE(double e);
+
+	double GetValue(double in);
+
+	void SetCoeffK(double k);
+	void SetCoeffE(double e);
 	/// @}
-	
+
 	/// @name OPERATORS
 	/// @{
 	Power& operator=(const Power &p);
 	bool operator==(const Power &p);
 	/// @}
-	
+
 	/// @name DEBUG and SERIALIZATION
 	/// @{
 	void ErrorMessage(const char *string); 
