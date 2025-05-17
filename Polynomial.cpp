@@ -30,7 +30,7 @@ Polynomial::Polynomial(const double* coefficients, int size){
 /// @brief destructor 
 Polynomial::~Polynomial() {
 
-	cout << "-- DEFAULT CONSTRUCTOR POLYNOMIAL --" << endl;
+	cout << "-- DEFAULT DESTRUCTOR POLYNOMIAL --" << endl;
 	if(coeff != NULL){
 		delete coeff;
 		coeff = NULL;

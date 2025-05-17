@@ -18,7 +18,7 @@ int main(){
 	Exponential E, E2;
 	Power PW, PW2;
 
-	double a0, a1, a2, a3, a4, a5, a6, a7, a8;
+	double a0, a1, a2, a3, a4, a5, a6, a7, a8, a9;
 	int size, i;
 	double pol[DIM]; // dichiaro vettore di dimensione fornita dall'utente
 
@@ -111,8 +111,11 @@ int main(){
 	E1.Dump();
 	cout << endl;
 	cout << endl;
-	a8 = E.GetValue(2);
-	cout << "The value of E for x=2 is: " << a8 << endl;
+	a8 = E1.GetValue(2);
+	cout << "The value of E1 for x=2 is: " << a8 << endl;
+	cout << endl;
+	a9 = E.GetValue(2);
+	cout << "The value of E for x=2 is: " << a9 << endl;
 	cout << endl;
 	cout << endl;
 
